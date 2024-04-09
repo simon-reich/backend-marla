@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  adminer:
+    image: adminer:4.8.1
+    ports:
+      - "8888:8080"
+
+  postgres:
+    image: postgres:15.2-alpine3.17
+    volumes:
+      - db-data-backendmarla:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: student
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+
+volumes:
+  db-data-backendmarla:
