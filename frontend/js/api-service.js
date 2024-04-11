@@ -25,25 +25,25 @@ export default {
 				}
 				return items;
 		} catch (error) {
-				console.error('Error fetching items:', error);
+			console.error('Error fetching items:', error);
 		}
 	},
 
 	async getItem(id) {
 		try {
 				return await $.ajax({
-					url: 'http://localhost:8080/api/v1/item/' + id,
+					url: `http://localhost:8080/api/v1/item/${id}`,
 					method: 'GET'
 				});
 		} catch (error) {
-				console.error('Error fetching items:', error);
+			console.error('Error fetching items:', error);
 		}
 	},
 
 	async postText(textDto, itemId) {
 		try {
 			const response = await $.ajax({
-				url: 'http://localhost:8080/api/v1/text/' + itemId,
+				url: `http://localhost:8080/api/v1/text/${itemId}`,
 				method: 'POST',
 				contentType: 'application/json',
 				data: JSON.stringify(textDto)
