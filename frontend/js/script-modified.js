@@ -3,11 +3,12 @@ import imgsData from './data/imgDtos.js';
 
 let timeoutActive = false;
 
-async function storeImgs() {
+async function storeAndFetchImgs() {
     const imgDtos = imgsData;
     for (const dto of imgDtos) {
         await apiService.postItems(dto);
     }
+	return await apiService.getItems();
 }
 
 async function sendTextHandler(img) {
@@ -59,16 +60,13 @@ async function nextSlide(img) {
 
 
 $(document).ready(async function () {
-    const imgs = await apiService.getItems();
-
-    if (!imgs.length) {
-        await storeImgs();
-    }
-
+    const imgs = (await apiService.getItems()).length 
+		? await apiService.getItems() 
+		: await storeAndFetchImgs(); 
     const num = Math.floor(Math.random() * (imgs.length));
     var img = imgs[num];
 
-    $('#send-text').on('click', async function () {
+    $('#send-text-button').on('click', async function () {
         await sendTextHandler(img);
     });
 
