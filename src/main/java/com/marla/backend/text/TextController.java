@@ -33,9 +33,9 @@ public class TextController {
         return textService.getText(id);
     }
 
-    @PostMapping
-    public void createText(@RequestBody Text text) {
-        textService.createText(text);
+    @PostMapping(path = "{itemId}")
+    public void createText(@RequestBody Text text, @PathVariable("itemId") Long itemId) {
+        textService.createText(text.getText(), itemId);
     }
     
     @DeleteMapping(path = "{id}")
@@ -46,7 +46,7 @@ public class TextController {
     @PutMapping(path = "{id}")
     public void updateText(
             @PathVariable("id") Long id,
-            @RequestParam(required = false) String text) {
+            @RequestParam String text) {
         textService.updateText(id, text);
     }
 }
