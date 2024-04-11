@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <title>Alt Text Gallery Generator</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <h1 id="main-title">How to alt
+       <br />.... maybe</h1>
+    <div id="about-text" class="about-text">
+      <p>Considering images, paintings, or photographs prompts us to imagine the untold stories and emotions they may contain.
+         Unfortunately, alternative texts, particularly essential for the visually impaired, often provide minimal details, 
+        missing the opportunity to fully engage the senses.
+        It's common for these brief descriptions to lack the depth needed to convey the richness of visual experiences.
+        There's a need for improvement in crafting alternative texts that not only cover the basics 
+        but also stimulate a more comprehensive understanding.
+        Striving for more enriching alternative texts could create a bridge between visual and non-visual experiences,
+        ensuring that art appreciation is accessible to everyone, regardless of visual ability.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="slide slide1 active">
+      <p>Thank you for participating in the following experiment, 
+        <br />just press the right arrow,
+        <br /> when you are ready</p>
+    </div>
+    <div class="slide slide2">
+      <p>I will show you an image, after a few seconds it will disappear</p>
+    </div>
+    
+    <div class="slide slide3">
+      <p>so watch it closely</p>
+    </div>
+
+    <div class="slide slide4">
+      <p>Ready?</p>
+    </div>
+
+    <div class="slide slide5 randomimg">
+      <img src="" alt="Dream">
+    </div>
+
+    <div class="slide slide6">
+      <p>Now try to remember what caught your eye</p>
+    </div>
+
+    <div class="slide slide7">
+      <p>How was the general mood in this image?</p>
+    </div>
+
+    <div class="slide slide8">
+      <p>Was it sunny and warm 
+        <br />or cold and windy?<br /> Maybe rainy?
+        <br />Was it even outside?
+        <br/> Or completely abstract?
+      </p>
+    </div>
+
+    <div class="slide slide9">
+      <p>Were there objects or animals or textures? 
+        <br />Imagine the feeling on your hands, 
+        <br />if you touched them...</p>
+    </div>
+
+    <div class="slide slide10">
+      <p>Take a moment to reflect on the details that stand out to you the most. Consider carefully which information and impressions seem most significant and descriptive.</p>
+    </div>
+
+    <div class="slide slide11">
+      <textarea id="img-text" placeholder="Please take a moment to describe the image you just saw in 3 sentences or up to 280 characters. Don't use colours or just visibly grabbable shapes. Keep in mind that once submitted, your text cannot be edited, and it will be saved for future reference, when finished click send." maxlength="280"></textarea>
+      <button id="send-text">Send</button>
+
+    </div>
+    <div class="slide slide12">
+      <div class="image-container">
+        <img src="" alt="Bild für Slide 12">
+      </div>
+      <div class="text-container">
+        <p class="slide11-text"></p>
+      </div>
+
+    </div>
+    <div class="slide slide13">
+      <p>Thank you, that was nice</p>
+    </div>
+
+    <div class="slide slide14">
+      <p>All texts:</p>
+      <div id="all-text-container"></div>
+    </div>
+
+    <div class="slide slide15">
+    </div>
+
+
+  </main>
+
+  <script src="js/browser.js" type="module"></script>
+  <script src="js/jquery-3.6.3.min.js" type="text/javascript"></script>
+  <script src="js/script-modified.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+@font-face {
+  font-family: "TimesNewArial";
+  src: url("../fonts/TimesNewArialVF.woff2");
+  font-variation-settings: "srff" 100, "ital" 0, "wght" 70;
+}
+
+html,
+body {
+  background:#1f1f1f;
+  z-index: 1;
+  font-family: "TimesNewArial", sans-serif;
+  font-variation-settings: "srff" 0, "ital" 0, "wght" 70;
+  font-size: 2vw;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white; 
+}
+
+a,
+button,
+input,
+label {
+  cursor: pointer;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgb(150, 142, 142);
+  font-size: 3vh;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  font-size: 9vh;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+  text-align-last:inherit;
+}
+
+.slide.active {
+  display: flex;
+}
+
+.slide1,
+.slide2,
+.slide3,
+.slide4,
+.slide6,
+.slide7,
+.slide8,
+.slide9,
+.slide10,
+.slide11 {
+  background-color:  #1f1f1f;
+}
+
+.slide5,
+.slide12 {
+  background-color: transparent;
+}
+
+.slide5 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.slide11 {
+  background-color: #2c2c2c;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 3vh;
+}
+
+.slide11 img {
+  display: none;
+}
+
+.slide11 textarea {
+  width: 66vw; 
+  height: 66vh; 
+  resize: none;
+  font-family: 'Times New Roman', Times, serif;
+  color: #2b2424;
+  font-size: 2vw; 
+  font-weight: bold;
+  text-align: left;
+}
+
+.slide12 {
+  align-items: stretch;
+}
+
+.slide12 .text-container,
+.slide12 .image-container {
+  flex: 1;
+}
+
+.slide12 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  top: 2vw;
+  left:2vw;
+}
+.slide13 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.about-text{
+  background: rgb(241, 238, 238, 0.7);
+  color: #1f1f1f;
+  padding: 0;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin: 1em auto;
+  font-size: 2vw;
+  text-align: justify;
+  text-align-last: none;
+  position: absolute;
+  width: 61vw;
+  top: 1vw;
+  left: 22vw;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s linear, padding 0.3s linear;
+  /* display: none; */
+}
+
+.about-text.show{
+  max-height: 100vh;
+}
