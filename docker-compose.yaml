@@ -11,7 +11,7 @@ services:
     volumes:
       - db-data-backendmarla:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: student
+      POSTGRES_DB: marla
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
     ports:
