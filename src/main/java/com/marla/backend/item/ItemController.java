@@ -48,7 +48,7 @@ public class ItemController {
     @PutMapping(path = "{id}")
     public void updateItem(
             @PathVariable("id") Long id,
-            @RequestParam(required = false) Text text) {
+            @RequestParam Text text) {
         itemService.updateItem(id, text);
     }
 }

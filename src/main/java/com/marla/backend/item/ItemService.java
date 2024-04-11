@@ -22,36 +22,29 @@ public class ItemService {
     }
 
     public Item getItem(Long id) {
-        Optional<Item> item = itemRepository.findById(id); 
-        if (!item.isPresent()) {
-            throw new IllegalStateException("item not in database");
-        }
-        return item.get();
+        return itemRepository.findById(id)
+                             .orElseThrow(() -> new RuntimeException("Item not found"));
     }
     
     public void createItem(Item item) {
         Optional<Item> itemByPath = itemRepository.findItemByPath(item.getPath());
         if(itemByPath.isPresent()) {
-            throw new IllegalStateException("item with path " + item.getPath() + " already in database");
+            throw new RuntimeException("Item with path " + item.getPath() + " already in database");
         }
         itemRepository.save(item);
     }
 
     public void deleteItem(Long id) {
-        Optional<Item> item = itemRepository.findById(id);
-        if(item.isEmpty()) {
-            throw new IllegalStateException("item not in database");
-        }
-        itemRepository.deleteById(id);
+        Item item = itemRepository.findById(id)
+                                  .orElseThrow(() -> new RuntimeException("Item not found"));
+        itemRepository.delete(item);;
     }
 
     public void updateItem(Long id, Text text) {
-        Optional<Item> item = itemRepository.findById(id);
-        if(item.isEmpty()) {
-            throw new IllegalStateException("item not in database");
-        }
-        List<Text> texts = item.get().getTexts();
+        Item item = itemRepository.findById(id)
+                                  .orElseThrow(() -> new RuntimeException("Item not found"));
+        List<Text> texts = item.getTexts();
         texts.add(text);
-        item.get().setTexts(texts);
+        item.setTexts(texts);
     }
 }
