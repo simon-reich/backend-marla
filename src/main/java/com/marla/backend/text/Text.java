@@ -74,10 +74,5 @@ public class Text {
 
     public Item getItem() {
         return item;
-    }
-
-    
-    
-
-    
+    }   
 }

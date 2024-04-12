@@ -88,5 +88,4 @@ public class Item {
     public LocalDate getDate() {
         return date;
     }
-
 }
