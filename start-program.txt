@@ -1,0 +1,14 @@
+1. open console in vscode: 
+- Terminal -> New Terminal
+
+2. start docker-compose in console: 
+- execute "docker-compose up"
+
+3. start java backend: 
+- open src/java/com/marla/backend/BackendMarlaApplication.java
+- open new terminal: Terminal -> new Terminal  
+- press play button in upper right corner
+
+4. serve frontend:
+- open frontend/index.html
+- press "Go Live" in lower right corner
