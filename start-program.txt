@@ -5,7 +5,7 @@
 - execute "docker-compose up"
 
 3. start java backend: 
-- open src/java/com/marla/backend/BackendMarlaApplication.java
+- open src/main/java/com/marla/backend/BackendMarlaApplication.java
 - open new terminal: Terminal -> new Terminal  
 - press play button in upper right corner
 
